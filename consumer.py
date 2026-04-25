@@ -5,16 +5,16 @@ class RabbitmqConsumer:
     def __init__(self, callback) -> None:
         self._host = "localhost"
         self.__port = 5672
-        self.__username = "guest"
+        self.__username = "guest"  # todos os parâmetros
         self.__password = "gest"
         self.__queue = "data_queue"
-        self.__callback = callback
-        self.__channel = self.create_channel()
+        self.__callback = callback   # função para tratar os dados recebidos do RabbitMq
+        self.__channel = self.__create_channel()
 
 
-
-
+    # Criação do canal
     def __create_channel(self):
+        
         # Parâmetros de Inicialização do RabbitMQ
         connection_parameters = pika.ConnectionParameters(  
             host=self._host,
@@ -25,7 +25,6 @@ class RabbitmqConsumer:
             )
         )
 
-        # Criando canal
         channel = pika.BlockingConnection(connection_parameters).channel()
 
         # Declarando fila
@@ -50,3 +49,6 @@ class RabbitmqConsumer:
 
 def minha_callback(ch, method, proerties, body):
     print(body)
+
+rabbitmq_consumer = RabbitmqConsumer(minha_callback)
+rabbitmq_consumer.start()
