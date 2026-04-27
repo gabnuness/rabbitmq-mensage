@@ -6,9 +6,9 @@ class RabbitmqConsumer:
         self._host = "localhost"
         self.__port = 5672
         self.__username = "guest"  # todos os parâmetros
-        self.__password = "gest"
-        self.__queue = "data_queue"
-        self.__callback = callback   # função para tratar os dados recebidos do RabbitMq
+        self.__password = "guest"
+        self.__queue = "my_queue"
+        self.__callback = callback  # função para tratar os dados recebidos do RabbitMq
         self.__channel = self.__create_channel()
 
 
