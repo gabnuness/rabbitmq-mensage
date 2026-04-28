@@ -41,11 +41,11 @@ Foram criados arquivos básicos apenas para validar o funcionamento da mensageri
 
 Após validar o funcionamento, o código foi refatorado utilizando **Programação Orientada a Objetos (POO)**:
 
-* `publisher.py` 
+* `publisher.py`
 
- * Versão estruturada do publisher
- * Responsável por encapsular a lógica de envio de mensagens
- * Facilita reutilização e manutenção
+  * Versão estruturada do publisher
+  * Responsável por encapsular a lógica de envio de mensagens
+  * Facilita reutilização e manutenção
 
 * `consumer.py`
 
